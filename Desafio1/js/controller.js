@@ -5,7 +5,7 @@
      
       $scope.formShow=false;   //Flag para mostrar formulario resultado
       $scope.DevelopHelp=false;      
-        
+      $scope.buttonConfirm = false;
 
         //Funcion para mostrar formulario a la derecha            
       $scope.insert=function (user)
@@ -14,6 +14,7 @@
               $scope.formShow=true;
               $scope.master = angular.copy(user);
               console.log("variable master con valores",$scope.master); 
+              $scope.buttonConfirm = true;
           }
            
            
@@ -38,6 +39,7 @@
           $scope.formulario.$setPristine();
           $scope.master = {};
           $scope.formulario2.$setPristine();
+          $scope.buttonConfirm = false;
         }; 
          
          // Funcion para ayuda de desarrollador
