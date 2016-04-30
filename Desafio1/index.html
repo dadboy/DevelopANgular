@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Desafio1">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Demo Bootstrap AngularJS</title>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+      
+    <!--  <link rel="icon" href="../../favicon.ico"> -->
+
+    <title>Justified Nav Template for Bootstrap</title>
+
+      <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!-- <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet"> -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous" />
+  </head>
+
+  <body>
+
+      <div class="page-header">
+        <img class="col-lg-2" src="..." class="img-fluid" alt="Responsive image">
+          <div class="text-left">
+           <h1>XMart la mejor tienda</h1>
+          </div>
+       
+        
+      </div>
+  <div class="container">
+        <br>
+      
+       
+  <!-- Fixed navbar -->
+        <nav class="navbar navbar-default ">
+          <div class="container">
+            <div class="navbar-header">
+              <!-- The mobile navbar-toggle button can be safely removed since you do not need it in a non-responsive implementation -->
+              
+            </div>
+            <!-- Note that the .navbar-collapse and .collapse classes have been removed from the #navbar -->
+            <div id="navbar">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Inicio</a></li>
+                <li><a href="#about">Blog</a></li>
+                <li><a href="#about">Tienda</a></li>
+                <li><a href="#contact">Contacto</a></li>
+
+              </ul>
+
+              <ul class="nav navbar-nav navbar-right">
+
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+        </nav>
+            
+              
+              
+       
+      <!-- Jumbotron -->
+   
+      <br><br>
+      <!-- Example row of columns -->
+      <div class="row" ng-controller="formController">  
+        <div class="col-lg-6" >
+          <h2>Datos personales</h2>     
+                <form name="formulario" class="jumbotron form-horizontal" role="form" >
+                    
+                    <div class="form-group">
+                        <label for="nombre" class="col-lg-3 control-label-left">Nombre</label>
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control required" id="nombre" placeholder="Ingrese su nombre" ng-model="user.nombre" required=>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="apellido" class="col-lg-3 control-label-left">Apellido</label>
+                        <div class="col-lg-9">
+                                <input type="text" class="form-control required" id="apellido" placeholder="Ingrese su apellido"ng-model="user.apellido" required=>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group" >                
+                        <label for="InputEmail" class="col-lg-3 control-label-left">Correo</label>
+                        <div class="col-lg-9">
+                            <input type="email" class="form-control required" id="exampleInputEmail1" placeholder="Ingrese su correo" ng-model="user.correo"  required= >
+                        </div>
+                    </div>
+                    
+                    <div class="form-group" >
+                        <label for="direccion1" class="col-lg-3 control-label-left">Direccion 1</label> 
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control required" id="direccion1" placeholder="Su dirección" ng-model="user.direccion1" required=>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group" >
+                        <label for="direccion2" class="col-lg-3 control-label-left">Direccion 2</label>
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control required" id="direccion2" placeholder="Su dirección" ng-model="user.direccion2" required=>
+                        </div>
+                    </div>
+              
+                     <div class="text-right">
+                         <button ng-click="clean()" type="submit" class="btn btn-warning ">Limpiar</button>
+                         <button ng-click="insert(user)" type="submit" class="btn btn-success">Ingresar</button>
+                     </div>
+                </form>
+                    
+            <br><br>      
+            <button ng-click="develop()" type="submit" class="btn btn-success">Develop</button>
+            <div name="develop" ng-show="DevelopHelp" >         
+              <code>formulario.$valid = {{formulario.$valid}}</code><br>
+              <code>formulario.$error.required = {{!!formulario.$error.required}}</code><br>
+              <pre>user = {{user | json}}</pre>
+                  
+            </div>
+                       
+        </div>
+        
+           <!--  ng-show="formShow" -->
+         <div class="col-lg-6 form-horizontal" name="formulario2" >
+             <div>
+                 <form name="formulario2" class="form-horizontal" role="form" >
+                    <br><br><br><br><br><br>
+                    <div class="form-group" >
+                        <label for="nombre" class="col-lg-3 control-label-left">Nombre</label>
+                        <div class="col-lg-9">
+                           <td>{{master.nombre}}</td>   
+                        </div>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="apellido" class="col-lg-3 control-label-left">Apellido</label>
+                        <div class="col-lg-9">
+                           <td>{{master.apellido}}</td>
+                        </div>
+                    </div>
+             
+                     <div class="form-group">
+                        <label for="correo" class="col-lg-3 control-label-left">Correo</label>
+                        <div class="col-lg-9">
+                           <td>{{master.correo}}</td>
+                        </div>
+                    </div>
+             
+                    <div class="form-group">
+                        <label for="direccion1" class="col-lg-3 control-label-left">Direccion 1</label>
+                        <div class="col-lg-9">
+                           <td>{{master.direccion1}}</td>
+                        </div>
+                    </div>              
+
+
+                    <div class="form-group">
+                        <label for="direccion2" class="col-lg-3 control-label-left">Direccion 2</label>
+                        <div class="col-lg-9">
+                           <td>{{master.direccion2}}</td>
+                        </div>
+                    </div>              
+                 </form>
+             </div>  
+                <br><br><br><br>
+              <div class="text-right">
+                <button ng-click="confirm()" type="submit" class="btn btn-warning">Confirmar</button>
+              </div>
+       </div>
+        
+      </div>   <!-- Fin row of columns -->
+
+        
+      <hr>       
+      <!-- Site footer -->
+      <footer class="footer text-right">
+        <p>&copy; 2016 Dadboy, Inc.</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+
+     
+      
+      	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+		<script src="http://code.jquery.com/jquery-migrate-1.3.0.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-sanitize.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-messages.min.js"></script>
+        
+        <script src= "js/controller.js" type="text/javascript"></script>
+      
+  </body>
+</html>
