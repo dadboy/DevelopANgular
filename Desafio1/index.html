@@ -69,7 +69,8 @@
       <!-- Example row of columns -->
       <div class="row" ng-controller="formController">  
         <div class="col-lg-6" >
-          <h2>Datos personales</h2>     
+          <h2>Datos personales</h2>    
+            <!-- Formulario Ingreso de datos usuario-->
                 <form name="formulario" class="jumbotron form-horizontal" role="form" >
                     
                     <div class="form-group">
@@ -114,6 +115,8 @@
                 </form>
                     
             <br><br>      
+            
+            <!-- Boton para desarrollador, borrar-->
             <button ng-click="develop()" type="submit" class="btn btn-success">Develop</button>
             <div name="develop" ng-show="DevelopHelp" >         
               <code>formulario.$valid = {{formulario.$valid}}</code><br>
@@ -124,7 +127,7 @@
                        
         </div>
         
-           <!--  ng-show="formShow" -->
+          <!-- Formulario de datos ingresados para confirmar-->
          <div class="col-lg-6 form-horizontal" name="formulario2" >
              <div>
                  <form name="formulario2" class="form-horizontal" role="form" >
@@ -174,7 +177,6 @@
         
       </div>   <!-- Fin row of columns -->
 
-        
       <hr>       
       <!-- Site footer -->
       <footer class="footer text-right">
